@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+body .background-stuff1{
+    /* margin-top: 0; */
+    height: 100vh;
+    width: 100vw;
+    background-color: #607D8B;
+    background-clip: content-box;
+    background-position: center;
+    background-size: cover;
+    overflow: scroll;
+}
+
+.background-stuff1 #heading1 {
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
