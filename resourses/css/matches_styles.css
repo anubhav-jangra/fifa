@@ -7,7 +7,7 @@ body {
     overflow: hidden;
 }
 
-body .background-stuff1{
+body .background-stuff{
     /* margin-top: 0; */
     height: 100vh;
     width: 100vw;
@@ -18,10 +18,78 @@ body .background-stuff1{
     overflow: scroll;
 }
 
-.background-stuff1 #heading1 {
+.background-stuff #heading {
     padding-top: 3vh;
-    padding-bottom: 5vh;
     text-align: center;
     width: 100%;
+}
+
+.container {
     color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
+    padding-bottom: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #455A64;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.matches-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.container .date {
+    margin-top: 2vh;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+    height: 10vh;
+    background-color: #78909C;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.container .match {
+    margin-bottom: 0.5vh;
+    background-color: #607D8B;
+    background-color: #37474F;
+    font-size: 30px;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    flex-basis: 47%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .match .team {
+    flex-basis: 35%;
+    padding-top: 3px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.container .match .team .team-flag {
+    margin-top: 2vh;
+    width: 120px;
+    height: 80px;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    align-self: center;
 }

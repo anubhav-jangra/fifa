@@ -16,6 +16,7 @@ body .background-stuff{
     background-position: center;
     background-size: cover;
     overflow: scroll;
+    color: white;
 }
 
 .background-stuff #heading {
@@ -26,7 +27,6 @@ body .background-stuff{
 }
 
 .container {
-    color: white;
     margin-left: 5%;
     margin-right: 5%;
     padding: 20px;
@@ -50,41 +50,54 @@ body .background-stuff{
 .container .group {
     text-align: center;
     font-size: 40px;
+    margin-top: 4vh;
     padding: 10px;
-    padding: 10px;
-    height: 10vh;
-    flex-basis: 55%;
+    height: 12vh;
+    flex-basis: 95%;
     flex-grow: 1;
-    background-color: #78909C;
+    background-color: #263238;
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     align-self: center;
+}
+
+.container .details {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    height: 10vh;
+    flex-basis: 95%;
+    flex-grow: 1;
+    background-color: #78909C;
+    display: flex;
+    justify-content: space-between;
 }
 
 .container .team {
+    font-size: 36px;
     width: 95%;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
     background-color: #607D8B;
     background-color: #37474F;
     padding: 10px;
-    height: 13vh;
+    height: 12vh;
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
-    flex-basis: 47%;
+    flex-basis: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-self: center;
 }
 .container .team .name {
-    font-size: 36px;
-    align-self: center;
+    flex-basis: 30%;
 }
 
 .container .team .flag {
-    align-self: center;
     width: 100px;
     height: 10vh;
+}
+
+.container .details .teams_header {
+    flex-basis: 53%;
 }
