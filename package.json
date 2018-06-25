@@ -1,0 +1,22 @@
+{
+  "name": "footwall-e",
+  "version": "1.0.0",
+  "description": "A dynamic web app to keep yourself acquainted with current 2018 Russia World-Cup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/love-san/fifa.git"
+  },
+  "author": "love_san",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/love-san/fifa/issues"
+  },
+  "homepage": "https://github.com/love-san/fifa#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
