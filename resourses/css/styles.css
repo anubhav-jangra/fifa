@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Lobster|Pacifico|Quicksand|Shadows+Into+Light');
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +44,7 @@ header {
     padding-left: 100px;
     padding-right: 50px;
     padding-top: 30px;
-    font-size: 18px;
+    font-size: 24px;
     animation: 1s fadein 0.5s forwards;
     opacity: 0;
     color: #fff;
@@ -157,11 +158,13 @@ header nav li {
 }
 
 #heading h1 {
-    font-size: 36px;
+    font-size: 64px;
+    font-family: 'Indie Flower';
     padding-bottom: 15px;
 }
 #heading h3 {
-    font-size: 24px;
+    font-size: 28px;
+    font-family: 'Shadows Into Light';
 }
 
 @keyframes slidefade {

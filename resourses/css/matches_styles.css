@@ -24,7 +24,7 @@ body .background-stuff{
 }
 
 .background-stuff #heading {
-    padding-top: 3vh;
+    padding-top: 15px;
     text-align: center;
     width: 100%;
 }
@@ -49,16 +49,15 @@ body .background-stuff{
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
-    flex-wrap: wrap;
     width: 100%;
 }
 
 .container .date {
-    margin-top: 2vh;
+    margin-top: 7px;
     text-align: center;
     font-size: 40px;
     padding: 10px;
-    height: 10vh;
+    height: 70px;
     background-color: #78909C;
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
@@ -66,14 +65,14 @@ body .background-stuff{
 }
 
 .container .match {
-    margin-bottom: 0.5vh;
+    margin-bottom: 4px;
     background-color: #607D8B;
     background-color: #37474F;
     font-size: 30px;
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
-    flex-basis: 47%;
+    flex-basis: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,7 +94,7 @@ body .background-stuff{
 }
 
 .container .match .team .team-flag {
-    margin-top: 2vh;
+    margin-top: 7px;
     width: 120px;
     height: 80px;
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
