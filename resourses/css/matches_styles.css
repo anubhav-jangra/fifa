@@ -89,6 +89,11 @@ body .background-stuff{
     text-align: center;
 }
 
+.container .match .scores {
+    display: flex;
+    justify-content: space-around;
+}
+
 .container .match .team .team-flag {
     margin-top: 2vh;
     width: 120px;
