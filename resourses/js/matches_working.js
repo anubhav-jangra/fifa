@@ -6,46 +6,62 @@ var allMatches = [];
 var allData = {};
 
 // ===========================MAJOR FUNCTIONING===========================
-axios.get(url2)
-.then(function(res) {
-    allData = res.data;
-    var groups = res.data.groups;
-    Object.keys(groups).forEach(function(data){
-        groups[data].matches.forEach(function(match) {
-            var a_match = new Match(match.name, match.home_team, match.away_team, match.date, match.stadium, match.home_result, match.away_result, match.finished, match.matchday);
-            allMatches[Number(a_match.name)] = a_match;
+document.addEventListener('DOMContentLoaded', () => {
+    axios.get(url2)
+    .then(function(res) {
+        allData = res.data;
+        var groups = res.data.groups;
+        Object.keys(groups).forEach(function(data){
+            groups[data].matches.forEach(function(match) {
+                var a_match = new Match(match.name, match.home_team, match.away_team, match.date, match.stadium, match.home_result, match.away_result, match.finished, match.matchday);
+                allMatches[Number(a_match.name)] = a_match;
+            });
         });
-    });
-    var knockout = res.data.knockout;
-    Object.keys(knockout).forEach(function(data){
-        knockout[data].matches.forEach(function(match) {
-            var a_match = new Match(match.name, match.home_team, match.away_team, match.date, match.stadium, match.home_result, match.away_result, match.finished, match.matchday);
-            allMatches[Number(a_match.name)] = a_match;
+        var knockout = res.data.knockout;
+        Object.keys(knockout).forEach(function(data){
+            knockout[data].matches.forEach(function(match) {
+                var a_match = new Match(match.name, match.home_team, match.away_team, match.date, match.stadium, match.home_result, match.away_result, match.finished, match.matchday);
+                allMatches[Number(a_match.name)] = a_match;
+            });
         });
-    });
-})
-.then(function() {
-    var temp_day;
-    for(var i = 1; i < allMatches.length; i++) {
-        var date = allMatches[i].date;
-        var match_date = returnDate(date);
-        temp_day = createDateDiv(temp_day, match_date);
+    })
+    .then(function() {
+        var temp_day;
+        for(var i = 1; i < allMatches.length; i++) {
+            var date = allMatches[i].date;
+            var match_date = returnDate(date);
 
-        if(allMatches[i].finished) {
-            createDoneMatch(i, match_date);
-        } else {
-            createNotDoneMatch(i, match_date);
+            if(i <= 48) {
+                temp_day = createDateDiv(temp_day, match_date);
+                if(allMatches[i].finished) {
+                    createDoneMatch(i, match_date);
+                } else {
+                    createNotDoneMatch(i, match_date);
+                }
+            } else if(49 <= i && i <= 56) {
+                temp_day = createDateDiv(temp_day, match_date);
+                if(allMatches[i].finished) {
+                    createDoneMatch(i, match_date);
+                } else {
+                    createNotDoneMatch(i, match_date);
+                }
+            } else if(57 <= i && i <= 60) {
+                if(allMatches[i].finished) {
+                    temp_day = createDateDiv(temp_day, match_date);
+                    createDoneMatch(i, match_date);
+                }
+            }
         }
-    }
-})
-.catch(function(err) {
-    if (err.response) {
-        console.log("PROBLLEM WITH RESPONSE!", err.response.status);
-    } else if (err.request) {
-        console.log("PROBLEM WITH REQUEST!");
-    } else {
-        console.log("ERROR", err.message);
-    }
+    })
+    .catch(function(err) {
+        if (err.response) {
+            console.log("PROBLLEM WITH RESPONSE!", err.response.status);
+        } else if (err.request) {
+            console.log("PROBLEM WITH REQUEST!");
+        } else {
+            console.log("ERROR", err.message);
+        }
+    });
 });
 
 // ===============================HELPRE FUNCTIONS======================================
@@ -92,42 +108,17 @@ function createDateDiv(temp_day, match_date) {
 function returnTeam(team) {
     let temp_div = document.createElement('div');
     temp_div.className = 'team';
-    console.log(String(team));
     if(String(team)[0] != 'r' && String(team)[0] != 'w') {
         temp_div.innerHTML = '<p class="team-name">' + allData.teams[Number(team)-1].name + '</p>';
         temp_div.innerHTML += '<img class="team-flag" src="' + allData.teams[Number(team)-1].flag + '">';
     } else {
         temp_div.innerHTML = '<p class="team-name">' + team + '</p>';
         temp_div.innerHTML += '<img class="team-flag" src="' + unknown_image + '">';
-        console.log(allMatches[i].home_team);
     }
     return temp_div;
 }
 
-function createDoneMatch (i, match_date) {
-    var team_div = document.createElement('div');
-    team_div.className = 'match';
-    let temp_div1 = returnTeam(allMatches[i].home_team);
-    team_div.appendChild(temp_div1);
-
-    var center_div = document.createElement('div');
-    center_div.className = 'centeral';
-    center_div.innerHTML = '<p class="time">' + match_date.match_time + '</p>';
-
-    var lower_center_div = document.createElement('div');
-    lower_center_div.className = 'scores';
-    lower_center_div.innerHTML += '<p class="home_result">' + allMatches[i].home_result + '</p>';
-    lower_center_div.innerHTML += '<p>-</p>';
-    lower_center_div.innerHTML += '<p class="away_result">' + allMatches[i].away_result + '</p>';
-    center_div.appendChild(lower_center_div);
-    team_div.appendChild(center_div);
-
-    let temp_div2 = returnTeam(allMatches[i].away_team);
-    team_div.appendChild(temp_div2);
-    document.querySelector(".matches-container").appendChild(team_div);
-}
-
-function createNotDoneMatch (i, match_date) {
+function createMatch(i, match_date, inner) {
     var team_div = document.createElement('div');
     team_div.className = 'match';
     let temp_div1 = returnTeam(allMatches[i].home_team);
@@ -139,7 +130,7 @@ function createNotDoneMatch (i, match_date) {
 
     let lower_center_div = document.createElement('div');
     lower_center_div.className = 'scores';
-    lower_center_div.innerHTML = '<p>VS</p>';
+    lower_center_div.innerHTML = inner;
     center_div.appendChild(lower_center_div);
     team_div.appendChild(center_div);
 
@@ -147,4 +138,14 @@ function createNotDoneMatch (i, match_date) {
     var temp_div2 = returnTeam(allMatches[i].away_team);
     team_div.appendChild(temp_div2);
     document.querySelector(".matches-container").appendChild(team_div);
+}
+
+function createDoneMatch (i, match_date) {
+    var inner = '<p class="home_result">' + allMatches[i].home_result + '</p>' + '<p>-</p>' + '<p class="away_result">' + allMatches[i].away_result + '</p>';
+    createMatch(i, match_date, inner);
+}
+
+function createNotDoneMatch (i, match_date) {
+    var inner = '<p>VS</p>';
+    createMatch(i, match_date, inner);
 }

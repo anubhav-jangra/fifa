@@ -52,7 +52,6 @@ body .background-stuff{
     position: relative;
     top: -10px;
     width: 100%;
-    height: 100%;
     z-index: 3;
 }
 
