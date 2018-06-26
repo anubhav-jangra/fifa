@@ -96,11 +96,11 @@ body .background-stuff{
     height: 70px;
 }
 
-@media screen and (min-width:600px) and (max-width: 1200px) {
+/* @media screen and (min-width:600px) and (max-width: 1200px) {
     .background-stuff .container .group {
         font-size: 40px;
     }
     .container .team {
         flex-basis: 100%;
     }
-}
+} */
