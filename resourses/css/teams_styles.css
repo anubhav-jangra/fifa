@@ -16,13 +16,15 @@ body {
 
 body .background-stuff{
     /* margin-top: 0; */
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    min-width: 600px;
     background-color: #607D8B;
     background-clip: content-box;
     background-position: center;
     background-size: cover;
     overflow: scroll;
+    color: white;
 }
 
 .background-stuff #heading {
@@ -35,7 +37,6 @@ body .background-stuff{
 
 .container {
     font-family: Quicksand;
-    color: white;
     margin-left: 5%;
     margin-right: 5%;
     padding: 20px;
@@ -88,6 +89,8 @@ body .background-stuff{
 
 .container .team .name {
     font-size: 36px;
+    flex-grow: 1;
+    align-self: stretch;
 }
 
 .container .team .flag {
@@ -96,19 +99,22 @@ body .background-stuff{
     height: 70px;
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .container .team .name {
         font-size: 26px;
     }
 }
 
 @media screen and (max-width: 1000px) {
+    .background-stuff #heading {
+        font-size: 24px;
+    }
     .team-container {
         flex-direction: column;
         flex-wrap: nowrap;
     }
     .background-stuff .container .group {
-        font-size: 40px;
+        font-size: 30px;
         align-self: stretch;
     }
     .container .team {

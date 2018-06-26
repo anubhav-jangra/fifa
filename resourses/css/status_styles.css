@@ -25,6 +25,7 @@ body .background-stuff{
 }
 
 .background-stuff #heading {
+    font-family: Raleway;
     padding-top: 15px;
     padding-bottom: 20px;
     text-align: center;
@@ -32,6 +33,7 @@ body .background-stuff{
 }
 
 .container {
+    font-family: Quicksand;
     margin-left: 5%;
     margin-right: 5%;
     padding: 20px;
