@@ -7,7 +7,7 @@ axios.get(url)
         var temp_div = document.createElement('div');
         temp_div.className = 'card';
         temp_div.innerHTML = '<div class="background-img" style="background-image: url(' +
-        data.image + ')"></div> <p>' + '<strong>'+ data.name + '</strong>, <em>'  + data.city + '</em></p>';
+        data.image + ')"></div> <div class="wrapper"></div> <p class="stadium_info">' + '<strong>'+ data.name + '</strong>, <em>'  + data.city + '</em></p>';
         document.querySelector(".container").appendChild(temp_div);
     });
 })
