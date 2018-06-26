@@ -165,6 +165,7 @@ header nav li {
 #heading h3 {
     font-size: 28px;
     font-family: 'Shadows Into Light';
+    margin-bottom: 30px;
 }
 
 @keyframes slidefade {

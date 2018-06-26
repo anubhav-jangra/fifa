@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             $menu.addClass('pointing');
             $menu.removeClass('tiny');
         }
-
         $window
             .resize(resize)
             .trigger('resize');
