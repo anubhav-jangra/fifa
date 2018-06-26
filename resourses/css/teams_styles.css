@@ -17,8 +17,9 @@ body {
 body .background-stuff{
     /* margin-top: 0; */
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     min-width: 600px;
+    min-height: 100%;
     background-color: #607D8B;
     background-clip: content-box;
     background-position: center;
