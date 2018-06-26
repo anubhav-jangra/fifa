@@ -1,23 +1,25 @@
 var url = "https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json";
 
 document.addEventListener('DOMContentLoaded', () => {
-    // (function($) {
-    //     var $window = $(window),
-    //         $menu = $('.ui.menu');
-    //
-    //     function resize() {
-    //         if ($window.width() < 580) {
-    //             $menu.addClass('huge');
-    //             return $menu.removeClass('massive');
-    //         }
-    //         $menu.addClass('massive');
-    //         $menu.removeClass('huge');
-    //     }
-    //
-    //     $window
-    //         .resize(resize)
-    //         .trigger('resize');
-    // })(jQuery);
+    (function($) {
+        var $window = $(window),
+            $menu = $('.ui.menu');
+
+        function resize() {
+            if ($window.width() < 580) {
+                $menu.addClass('tiny');
+                $menu.removeClass('massive');
+                return $menu.removeClass('pointing');
+            }
+            $menu.addClass('massive');
+            $menu.addClass('pointing');
+            $menu.removeClass('tiny');
+        }
+
+        $window
+            .resize(resize)
+            .trigger('resize');
+    })(jQuery);
     axios.get(url)
     .then(function(res) {
         var i = 0;
