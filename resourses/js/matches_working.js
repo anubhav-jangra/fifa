@@ -5,7 +5,7 @@
 // console.log(today.getDate() + " " + today.getMonth() + " " + today.getFullYear());
 
 var url2 = "https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json";
-
+var unknown_image = "https://d30y9cdsu7xlg0.cloudfront.net/png/513446-200.png";
 function Match(name, home_team, away_team, date, stadium, home_result, away_result, finished, match_day) {
     this.name           = name;
     this.home_team      = home_team;
@@ -29,6 +29,7 @@ axios.get(url2)
         groups[data].matches.forEach(function(match) {
             var a_match = new Match(match.name, match.home_team, match.away_team, match.date, match.stadium, match.home_result, match.away_result, match.finished, match.matchday);
             allMatches[Number(a_match.name)] = a_match;
+            console.log(a_match);
         });
     });
 })
@@ -39,6 +40,7 @@ axios.get(url2)
     for(var i = 1; i < allMatches.length; i++) {
         var date = allMatches[i].date;
         var match_day = String(date).slice(8, 10) + ' ' + String(date).slice(5, 7);
+        var match_time = String(date).slice(11, 19);
         if(match_day[match_day.length-1] == 6) {
             match_day = match_day.slice(0, 3) + "June";
         }
@@ -58,6 +60,9 @@ axios.get(url2)
             temp_div1.innerHTML = '<p class="team-name">' + allData.teams[Number(allMatches[i].home_team)-1].name + '</p>';
             temp_div1.innerHTML += '<img class="team-flag" src="' + allData.teams[Number(allMatches[i].home_team)-1].flag + '">';
             team_div.appendChild(temp_div1);
+
+            var center_div = document.createElement('div');
+            center_div.className = 
 
             team_div.innerHTML += '<p class="home_result">' + allMatches[i].home_result + '</p>';
 
